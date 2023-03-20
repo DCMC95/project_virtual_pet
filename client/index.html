@@ -3,7 +3,7 @@
 
 <title>Project VP</title>
 <link rel="stylesheet" href="styles.css">
-<script src="Project_Virtual_Pet.js"></script>
+<script src="pvp.js"></script>
 
 <h1>PROJECT VIRTUAL PET</h1>
 
@@ -18,6 +18,23 @@
 </P>
 
 <output id="out"></output>
+
+<svg>
+    <defs>
+        <circle id=head cx="0" cy="0" r="100" fill="peru"/>
+        <path id=ear d="M0,0 L25,0 0,-50 -25,0 0,0" stroke="peru" stroke-width="5" fill="DarkGoldenRod"/>
+        <circle id=eye cx="0" cy="0" r="6" stroke="white" stroke-width="6" fill="black"/>
+    </defs>
+    <g>
+        <use href="#head" transform="translate(200, 200)"/>
+        <use href="#ear" transform="rotate(340) translate(100 170)"/>
+        <use href="#ear" transform="rotate(20) translate(265 30)"/>
+        <use href="#eye" transform="translate(150 170)"/>
+        <use href="#eye" transform="translate(250 170)"/>
+        <use href="#pupil" transform="translate(150 150)"/>
+        <use href="#pupil" transform="translate(150 175)"/>
+    </g>
+</svg>
 
 <section class="stats">
     <h2>

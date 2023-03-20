@@ -1,0 +1,23 @@
+{
+  "name": "project_virtual_pet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pvp-server.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "error"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DCMC95/project_virtual_pet.git"
+  },
+  "author": "up2110995",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DCMC95/project_virtual_pet/issues"
+  },
+  "homepage": "https://github.com/DCMC95/project_virtual_pet#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
