@@ -1,16 +1,16 @@
 'use strict';
 
-let time;
 let timeLived;
 let death = false;
 
-export const vPet = {
+export let vPet = {
   health: 100,
   emotion: 100,
   energy: 100,
   hunger: 100,
   cleanliness: 100,
   latrine: 0,
+  time: 0,
 };
 
 function status(selector, value) {
@@ -34,12 +34,11 @@ function mood() {
   if (vPet.emotion <= 0) {
     vPet.health -= 1;
     vPet.emotion = 0;
-    console.log(vPet.health);
   } else if (vPet.emotion >= 100) {
     vPet.emotion = 100;
   }
 
-  if (Number.isInteger(time / 2) && vPet.health > 0) {
+  if (Number.isInteger(vPet.time / 2) && vPet.health > 0) {
     vPet.emotion--;
   }
 }
@@ -49,7 +48,6 @@ function feed() {
 
   if (vPet.health < 100 && vPet.hunger > 0 && vPet.health > 0) {
     vPet.hunger--;
-    console.log(vPet.health);
   } else if (vPet.hunger >= 100) {
     vPet.hunger = 100;
   } else if (vPet.hunger <= 0) {
@@ -57,7 +55,7 @@ function feed() {
     vPet.health--;
   }
 
-  if (Number.isInteger(time / 0.6) && vPet.health > 0) {
+  if (Number.isInteger(vPet.time / 0.6) && vPet.health > 0) {
     vPet.hunger--;
   }
 }
@@ -74,7 +72,7 @@ function rest() {
     vPet.cleanliness = 100;
   }
 
-  if (Number.isInteger(time / 3.6) && vPet.health > 0) {
+  if (Number.isInteger(vPet.time / 3.6) && vPet.health > 0) {
     vPet.energy--;
   }
 }
@@ -89,7 +87,7 @@ function hygiene() {
     vPet.cleanliness = 100;
   }
 
-  if (Number.isInteger(time / 4) && vPet.health > 0) {
+  if (Number.isInteger(vPet.time / 4) && vPet.health > 0) {
     vPet.cleanliness--;
   }
 }
@@ -104,7 +102,7 @@ function toilet() {
     vPet.health--;
   }
 
-  if (vPet.hunger > 0 && Number.isInteger(time / 1.5) && vPet.health > 0) {
+  if (vPet.hunger > 0 && Number.isInteger(vPet.time / 1.5) && vPet.health > 0) {
     vPet.latrine++;
   }
 }
@@ -132,8 +130,18 @@ function timer() {
     weeks = Math.floor(days / 7);
     years = Math.floor(weeks / 365);
     timerout.textContent = `${years > 0 ? years + ' yrs' : ''} ${weeks > 0 ? (weeks - (52 * years)) + ' wks' : ''} ${days > 0 ? (days - (7 * weeks)) + ' days' : ''} ${hours > 0 ? (hours - (24 * days)) + ' hrs' : ''} ${minutes > 0 ? (minutes - (60 * hours)) + ' mins' : ''} ${(seconds - (60 * minutes))} seconds`;
-    time = seconds;
+    vPet.time = seconds;
   }
+}
+
+export function save() {
+  localStorage.setItem('pet', JSON.stringify(vPet));
+  console.log(localStorage);
+}
+
+export function load() {
+  vPet = JSON.parse(localStorage.pet);
+  console.log(localStorage);
 }
 
 export function main() {

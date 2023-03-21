@@ -1,6 +1,7 @@
 'use strict';
 
-import { vPet } from './pvp-stats.mjs';
+import { savebutton, loadbutton, healthbutton, moodbutton, energybutton, hungerbutton, hygienebutton, toiletbutton, enemy } from './global.mjs';
+import { vPet, save, load } from './pvp-stats.mjs';
 
 function healthIncrease() {
   if (vPet.health > 80) {
@@ -67,23 +68,18 @@ function useToilet() {
 }
 
 function enemies() {
-  const enemy = document.querySelector('.enemy');
   enemy.classList.add('hide');
 }
 
 export function addListeners() {
-  const healthbutton = document.querySelector('#healthbutton');
-  const moodbutton = document.querySelector('#moodbutton');
-  const energybutton = document.querySelector('#energybutton');
-  const hungerbutton = document.querySelector('#hungerbutton');
-  const hygienebutton = document.querySelector('#hygienebutton');
-  const toiletbutton = document.querySelector('#toiletbutton');
-  const enemy = document.querySelector('.enemy');
   healthbutton.addEventListener('click', healthIncrease);
   moodbutton.addEventListener('click', moodIncrease);
   energybutton.addEventListener('click', energyIncrease);
   hungerbutton.addEventListener('click', hungerIncrease);
   hygienebutton.addEventListener('click', hygieneIncrease);
   toiletbutton.addEventListener('click', useToilet);
+  savebutton.addEventListener('click', save);
+  loadbutton.addEventListener('click', load);
+
   enemy.addEventListener('click', enemies);
 }

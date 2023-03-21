@@ -1,11 +1,11 @@
 import { main as statsmain, vPet } from './pvp-stats.mjs';
 import { addListeners } from './pvp-stats_buttons.mjs';
-import { createParticle } from './particles.mjs';
+// import { createParticle } from './particles.mjs';
 
-const screen = {
-  x: window.innerWidth - 20,
-  y: window.innerHeight - 15,
-};
+// const screen = {
+//   x: window.innerWidth - 20,
+//   y: window.innerHeight - 15,
+// };
 
 window.addEventListener('load', main);
 
@@ -27,8 +27,8 @@ function petsName() {
 }
 
 function main() {
-  const body = document.body;
-  setInterval(createParticle, 50, 5000, screen, body);
+  // const body = document.body;
+  // setInterval(createParticle, 50, 5000, screen, body);
 
   // const statstime = document.querySelector('.statstime');
   // const statsmeters = document.querySelector('.statsmeters');

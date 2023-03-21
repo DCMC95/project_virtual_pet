@@ -1,93 +1,372 @@
 <!DOCTYPE html>
-
-
 <title>Project VP</title>
 <link rel="stylesheet" href="styles.css">
-<script src="pvp.js"></script>
+<script defer src="pvp.mjs" type="module"></script>
 
-<h1>PROJECT VIRTUAL PET</h1>
+<h1 id="pagetitle">PROJECT VIRTUAL PET</h1>
 
-<P>
-    This will display your pets health, energy, hunger and mood. As well as a few buttons to increases them.
-</P>
+<section class=" petinfo">
+    <P class="petname">
+        Enter your pets name here:
+        <input id="nameinput" type="text">
+        <button id="namebutton">CONFIRM</button>
+    </P>
+    
+    <output id="out"></output>
 
-<P>
-    Enter your pets name here:
-    <input id="nameinput" type="text">
-    <button id="namebutton">CONFIRM</button>
-</P>
+</section>
 
-<output id="out"></output>
-
-<svg>
-    <defs>
-        <circle id=head cx="0" cy="0" r="100" fill="peru"/>
-        <path id=ear d="M0,0 L25,0 0,-50 -25,0 0,0" stroke="peru" stroke-width="5" fill="DarkGoldenRod"/>
-        <circle id=eye cx="0" cy="0" r="6" stroke="white" stroke-width="6" fill="black"/>
-    </defs>
-    <g>
-        <use href="#head" transform="translate(200, 200)"/>
-        <use href="#ear" transform="rotate(340) translate(100 170)"/>
-        <use href="#ear" transform="rotate(20) translate(265 30)"/>
-        <use href="#eye" transform="translate(150 170)"/>
-        <use href="#eye" transform="translate(250 170)"/>
-        <use href="#pupil" transform="translate(150 150)"/>
-        <use href="#pupil" transform="translate(150 175)"/>
-    </g>
-</svg>
-
-<section class="stats">
-    <h2>
-        STATISTICS
-    </h2>
-    <p>
+<section class="statstime">
+    <p id="timer">
         <strong>TIMER</strong>
         <br>
-        <output id="timerout">0000</output>
+        <output id="timerout">0 seconds</output>
     </p>
-    <P>
-        <strong>HEALTH</strong>
-        <br>
-        <output id="healthout">0000</output>
-        <br>
-        <output id="healthstatus">STATUS</output>
-        <br>
+</section>
+
+<div class="main">
+    <svg viewBox="0 0 1600 640" transform="scale(1,1)">
+        <defs>
+            <linearGradient id="whitelightdark">
+                <stop offset="5%" stop-color="linen" />
+                <stop offset="95%" stop-color="lightgrey" />
+            </linearGradient>
+            
+            <linearGradient id="bluelightdark">
+                <stop offset="5%" stop-color="deepskyblue" />
+                <stop offset="95%" stop-color="mediumblue" />
+            </linearGradient>    
+    
+            <linearGradient id="greenlightdark">
+                <stop offset="5%" stop-color="greenyellow" />
+                <stop offset="95%" stop-color="green" />
+            </linearGradient>
+    
+            <linearGradient id="redlightdark">
+                <stop offset="5%" stop-color="orangered" />
+                <stop offset="95%" stop-color="maroon" />
+            </linearGradient>
+    
+            <linearGradient id="greylightdark">
+                <stop offset="5%" stop-color="lightgrey" />
+                <stop offset="95%" stop-color="dimgrey" />
+            </linearGradient>
+    
+            <linearGradient id="greydarklight">
+                <stop offset="5%" stop-color="dimgrey" />
+                <stop offset="95%" stop-color="lightgrey" />
+            </linearGradient>
+    
+            <circle id="eye" cx="0" cy="0" r="6" stroke="white" stroke-width="6" fill="black"/>
+            <path id="ear" d="M0,0 L25,0 0,-50 -25,0 0,0" stroke="peru" stroke-width="5" fill="DarkGoldenRod"/>
+            
+            <circle id="circle" cx="0" cy="0" r="100"/>
+            <path id="cube" d="M0,0 L50,0 50,50 0,50 0,0"/>
+            <path id="rectangle" d="M0,0 L50,0 50,250 0,250 0,0"/>
+            <path id="triangle" d="M0,0 L25,0 0,-50 -25,0 0,0"/>
+            <path id="semicircle" d="M0,0 C0,100 100,100 100,0 L-1.5,0"/>
+            <path id="wave" d="M0,0 L0,100 C0,200 125,200 125,100 125,0 250,0 250,100 L250,0 0,0"/>
+            <path id="line" d="M0,0 L100,0"/>
+            <path id="foundation" d="M0,0 L502.6,0 527.6,130 -25,130 0,0"/>
+            <path id="bar" d="M0,0 C10,0 10,15 0,15 L-70,15 C-80,15 -80,0 -70,0"/>
+        </defs>
+        
+        <!-- <g class="enemy" fill="url('#redlightdark')">
+            <use href="#semicircle" transform="translate(450,567) rotate(180) scale(-0.75,0.5)"/>
+            <use href="#cube" transform="translate(450,566) scale(1.5,1.2)"/>
+            <use href="#semicircle" transform="translate(472,533) rotate(180) scale(-0.30,0.18)"/>
+            <use href="#bar" transform="translate(522.3,613)"/>
+            <use href="#eye" transform="translate(470,566)"/>
+            <use href="#eye" transform="translate(505,566)"/> 
+        </g> -->
+    
+        <g class="castle">
+            <use href="#rectangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="2.5" transform="translate(1000,390)"/>
+            
+            <use href="#cube" transform="translate(1381.25,320) scale(1.75,1)"/>
+            <use href="#cube" transform="translate(981.25,320) scale(1.75,1)"/>
+            <use href="#semicircle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="3" transform="translate(980,360) scale(0.9,0.6)"/>
+            <use href="#semicircle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1" transform="translate(1375,516.79) rotate(180) scale(3,2)"/>
+            <use href="#semicircle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1" transform="translate(1336,516.79) rotate(180) scale(2.25,2)"/>
+            <use href="#semicircle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1" transform="translate(1298.5,516.79) rotate(180) scale(1.5,2)"/>
+            <use href="#semicircle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1" transform="translate(1261.5,516.79) rotate(180) scale(0.75,2)"/>
+            <use href="#cube" transform="translate(1153.75,61) scale(2.85,2.5)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1" transform="translate(1225,61.5) scale(3,1.5)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1" transform="translate(1225,61.5) scale(2.25,1.5)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1" transform="translate(1225,61.5) scale(1.5,1.5)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1" transform="translate(1225,61.5) scale(0.75,1.5)"/>
+            <use href="#cube" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1187,215) scale(1.5,3)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1025,321) scale(2,1)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1025,321) scale(1.5,1)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1025,321) scale(1,1)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1025,321) scale(0.5,1)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1425,321) scale(2,1)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1425,321) scale(1.5,1)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1425,321) scale(1,1)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1425,321) scale(0.5,1)"/>
+            
+            <use href="#foundation" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(974,517.5) scale(1,1)"/>
+            <use href="#foundation" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1024,517.5) scale(0.8,1)"/>
+            <use href="#foundation" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1074,517.5) scale(0.6,1)"/>
+            <use href="#foundation" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1124,517.5) scale(0.4,1)"/>
+            <use href="#foundation" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1174,517.5) scale(0.2,1)"/>
+            <use href="#semicircle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1274,650.5) rotate(180) scale(1,1)"/>
+            <use href="#semicircle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1269,650.5) rotate(180) scale(1,1)"/>
+            <use href="#semicircle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1264,650.5) rotate(180) scale(1,1)"/>
+            <use href="#semicircle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1259,650.5) rotate(180) scale(1,1)"/>
+            <use href="#semicircle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1254,650.5) rotate(180) scale(1,1)"/>
+            <use href="#semicircle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1249,650.5) rotate(180) scale(1,1)"/>
+            <use href="#semicircle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1244,650.5) rotate(180) scale(1,1)"/>
+            <use href="#semicircle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1239,650.5) rotate(180) scale(1,1)"/>
+            <use href="#semicircle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1234,650.5) rotate(180) scale(1,1)"/>
+            <use href="#semicircle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1220,650.5) rotate(180) scale(0.75,0.8)"/>
+            
+            <use href="#semicircle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="3" transform="translate(1380,360) scale(0.9,0.6)"/>
+            <use href="#semicircle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="3" transform="translate(991,360) scale(0.675,0.6)"/>
+            <use href="#semicircle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="3" transform="translate(1002,360) scale(0.45,0.6)"/>
+            <use href="#semicircle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="3" transform="translate(1013,360) scale(0.225,0.6)"/>
+            <use href="#semicircle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="3" transform="translate(1391,360) scale(0.675,0.6)"/>
+            <use href="#semicircle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="3" transform="translate(1402,360) scale(0.45,0.6)"/>
+            <use href="#semicircle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="3" transform="translate(1413,360) scale(0.225,0.6)"/>
+    
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.2" transform="translate(1224,385) scale(3,1.5)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.2" transform="translate(1224,385) scale(2.25,1.5)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.2" transform="translate(1224,385) scale(1.5,1.5)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.2" transform="translate(1224,385) scale(0.75,1.5)"/>
+            
+            <use href="#triangle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1" transform="translate(1225,185) rotate(180) scale(3,1.5)"/>
+            <use href="#triangle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1" transform="translate(1225,185) rotate(180) scale(2.25,1.5)"/>
+            <use href="#triangle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1" transform="translate(1225,185) rotate(180) scale(1.5,1.5)"/>
+            <use href="#triangle" fill="url('#greydarklight')" stroke="lightgrey" stroke-width="1" transform="translate(1225,185) rotate(180) scale(0.75,1.5)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1425,517) scale(2,1)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1425,517) scale(1.5,1)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1425,517) scale(1,1)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1425,517) scale(0.5,1)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1025,517) scale(2,1)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1025,517) scale(1.5,1)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1025,517) scale(1,1)"/>
+            <use href="#triangle" fill="url('#greylightdark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1025,517) scale(0.5,1)"/>
+            <use href="#rectangle" fill="url('#greylightdark')" transform="translate(1400,397) scale(0.99,0.378)"/>
+            <use href="#rectangle" fill="url('#greylightdark')" transform="translate(999.7,397) scale(0.99,0.378)"/>
+            <use href="#rectangle" fill="none" stroke="lightgrey" stroke-width="2.5" transform="translate(1400,397) scale(1,0.085)"/>
+            <use href="#rectangle" fill="none" stroke="lightgrey" stroke-width="2.5" transform="translate(1400,418) scale(1,0.085)"/>
+            <use href="#rectangle" fill="none" stroke="lightgrey" stroke-width="2.5" transform="translate(1400,439) scale(1,0.085)"/>
+            <use href="#rectangle" fill="none" stroke="lightgrey" stroke-width="2.5" transform="translate(1400,460) scale(1,0.085)"/>
+            <use href="#rectangle" fill="none" stroke="lightgrey" stroke-width="2.5" transform="translate(1400,470.5) scale(1,0.085)"/>
+            
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1400,397.2) scale(1,0.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1400,418.2) scale(1,0.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1400,439.2) scale(1,0.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1400,460.2) scale(1,0.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1400,481.2) scale(1,0.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1399,397.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1420,397.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1440,397.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1404.25,407.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1414.75,407.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1434.75,407.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1399,418.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1420,418.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1440,418.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1404.25,428.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1414.75,428.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1434.75,428.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1399,439.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1420,439.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1440,439.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1404.25,449.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1414.75,449.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1434.75,449.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1399,460.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1420,460.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1440,460.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1404.25,470.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1414.75,470.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1434.75,470.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1399,481.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1420,481.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1440,481.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,397.2) scale(1,0.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,407.7) scale(1,0.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,418.2) scale(1,0.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,428.7) scale(1,0.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,439.2) scale(1,0.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,449.7) scale(1,0.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,460.2) scale(1,0.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,470.7) scale(1,0.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,481.2) scale(1,0.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(999,397.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1020,397.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1040,397.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1004.25,407.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1014.75,407.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1034.75,407.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(999,418.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1020,418.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1040,418.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1004.25,428.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1014.75,428.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1034.75,428.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(999,439.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1020,439.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1040,439.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1004.25,449.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1014.75,449.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1034.75,449.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(999,460.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1020,460.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1040,460.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1004.25,470.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1014.75,470.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1034.75,470.7) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(999,481.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1020,481.2) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1040,481.2) scale(0.21.21)"/>
+            
+            <!-- <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1188,221.5) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1212,221.5) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1188,232) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1212,232) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1188,242.5) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1212,242.5) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1188,253) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1212,253) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1188,263.5) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1212,263.5) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1188,274) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1212,274) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1188,284.5) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1212,284.5) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1188,295) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1212,295) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1188,305.5) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1212,305.5) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1188,316) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1212,316) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1188,326.5) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1212,326.5) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1188,337) scale(1,0.21)"/>
+            <use href="#cube" fill="grey" stroke="lightgrey" stroke-width="2" transform="translate(1212,337) scale(1,0.21)"/> -->
+    
+            <use href="#cube" fill="url('#greylightdark')" transform="translate(1188.5,221) scale(1.45,1.5)"/>
+            <use href="#cube" fill="url('#greylightdark')" transform="translate(1188.5,272) scale(1.45,1.5)"/>
+    
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1188.75,221.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1209.75,221.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1230.75,221.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1251.75,221.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1194,232) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1204.5,232) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1215,232) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1236,232) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1246.5,232) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1188.75,242.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1209.75,242.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1230.75,242.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1251.75,242.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1194,253) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1204.5,253) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1215,253) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1236,253) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1246.5,253) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1188.75,263.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1209.75,263.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1230.75,263.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1251.75,263.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1194,274) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1204.5,274) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1215,274) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1236,274) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1246.5,274) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1188.75,284.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1209.75,284.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1230.75,284.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1251.75,284.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1194,295) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1204.5,295) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1215,295) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1236,295) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1246.5,295) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1188.75,305.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1209.75,305.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1230.75,305.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1251.75,305.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1194,316) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1204.5,316) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1215,316) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1236,316) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1246.53,316) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1188.75,326.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1209.75,326.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1230.75,326.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1251.75,326.5) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1194,337) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1204.5,337) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1215,337) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1236,337) scale(0.21.21)"/>
+            <use href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1246.53,337) scale(0.21.21)"/>
+            
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1106,420) scale(2.38,1)"/>
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1080,470) scale(2.9,1)"/>
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(963,575) scale(5.22,1)"/>
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,221.5) scale(0.75,1)"/>
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,232) scale(0.75,1)"/>
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,242.5) scale(0.75,1)"/>
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,253) scale(0.75,1)"/>
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,263.5) scale(0.75,1)"/>
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,274) scale(0.75,1)"/>
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,284.5) scale(0.75,1)"/>
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,295) scale(0.75,1)"/>
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,305.5) scale(0.75,1)"/>
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,316) scale(0.75,1)"/>
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,326.5) scale(0.75,1)"/>
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,337) scale(0.75,1)"/>
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="0.8" transform="translate(1188,347.5) scale(0.75,1)"/>
+            <use href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1261.95,347.5) scale(5.1,1.26) rotate(-90)"/>
+        </g>
+        
+        <g class="wall" stroke="lightgrey" stroke-width="3">
+            <use href="#rectangle" fill="url('#greylightdark')" transform="translate(800,445)"/>
+            <use href="#cube" fill="none" transform="translate(800,445)"/>
+            <use href="#cube" fill="none" transform="translate(800,495)"/>
+            <use href="#cube" fill="none" transform="translate(800,545)"/>
+            <use href="#cube" fill="none" transform="translate(800,495) scale(0.5,1)"/>
+            <use href="#cube" fill="none" transform="translate(800,595) scale(0.5,1)"/>
+        </g>
+    
+        <g class="cat" fill="peru">
+            <use href="#circle" transform="translate(1225,125)"/>
+            <use href="#ear" transform="translate(1175,50) rotate(-30)"/>
+            <use href="#ear" transform="translate(1275,50) rotate(30)"/>
+            <use href="#eye" transform="translate(1185,80)"/>
+            <use href="#eye" transform="translate(1260,80)"/>
+        </g>
+    </svg>
+    
+    <section class="statsmeters">
+        <p><label for="health"><strong>HEALTH:</strong></label></p>
+        <p><meter id="healthstatus" min="0" max="100" low="33" high="66" optimum="80" value="100"></meter></p>
+        <p><label for="mood"><strong>MOOD:</strong></label></p>
+        <p><meter id="moodstatus" min="0" max="100" low="33" high="66" optimum="80" value="100"></meter></p>
+        <p><label for="energy"><strong>ENERGY:</strong></label></p>
+        <p><meter id="energystatus" min="0" max="100" low="33" high="66" optimum="80" value="100"></meter></p>
+        <p><label for="hunger"><strong>HUNGER:</strong></label></p>
+        <p><meter id="hungerstatus" min="0" max="100" low="33" high="66" optimum="80" value="100"></meter></p>
+        <p><label for="hygiene"><strong>HYGIENE:</strong></label></p>
+        <p><meter id="hygienestatus" min="0" max="100" low="33" high="66" optimum="80" value="100"></meter></p>
+        <p><label for="toilet"><strong>TOILET:</strong></label></p>    <p><meter id="toiletstatus" min="0" max="100" low="80" high="66" optimum="33" value="0"></meter></p>
+    </section>
+    <section class="statsbuttons">
         <button id="healthbutton">HEALTH</button>
-    </P>
-    <P>
-        <strong>MOOD</strong>
-        <br>
-        <output id="moodout">0000</output>
-        <br>
-        <output id="moodstatus">STATUS</output>
-        <br>
         <button id="moodbutton">MOOD</button>
-    </P>
-    <P>
-        <strong>ENERGY</strong>
-        <br>
-        <output id="energyout">0000</output>
-        <br>
-        <output id="energystatus">STATUS</output>
-        <br>
         <button id="energybutton">ENERGY</button>
-    </P>
-    <P>
-        <strong>HUNGER</strong>
-        <br>
-        <output id="hungerout">0000</output>
-        <br>
-        <output id="hungerstatus">STATUS</output>
-        <br>
         <button id="hungerbutton">HUNGER</button>
-    </P>
-    <P>
-        <strong>HYGIENE</strong>
-        <br>
-        <output id="hygieneout">0000</output>
-        <br>
-        <output id="hygienestatus">STATUS</output>
-        <br>
         <button id="hygienebutton">HYGIENE</button>
-    </P>
+        <button id="toiletbutton">TOILET</button>
+    </section>
+</div>
+
+<section class="localestoragebuttons">
+    <button id="savebutton">SAVE</button>
+    <button id="loadbutton">LOAD</button>
 </section>
