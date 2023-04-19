@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="891 516 100 1000" width="600" height="600">
+    <defs>
+        <circle id="eye" cx="0" cy="0" r="6" stroke="white" stroke-width="6" fill="black"/>        
+        <path id="cube" d="M0,0 L50,0 50,50 0,50 0,0"/>
+        <path id="semiCircle" d="M0,0 C0,100 100,100 100,0 L-1.5,0"/>
+        <path id="bar" d="M0,0 C10,0 10,15 0,15 L-70,15 C-80,15 -80,0 -70,0"/>
+    </defs>
+
+    <g>
+        <use xlink:href="#semiCircle" transform="translate(450,567) rotate(180) scale(-0.75,0.5)"/>
+        <use xlink:href="#cube" transform="translate(450,566) scale(1.5,1.2)"/>
+        <use xlink:href="#semiCircle" transform="translate(472,533) rotate(180) scale(-0.30,0.18)"/>
+        <use xlink:href="#bar" transform="translate(522.3,613)"/>
+        <use xlink:href="#eye" transform="translate(470,566)"/>
+        <use xlink:href="#eye" transform="translate(505,566)"/>
+    </g>
+</svg>

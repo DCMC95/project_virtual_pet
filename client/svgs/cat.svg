@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="940 20 1000 500" width="2000" height="600">
+    <defs>
+        <circle id="eye" cx="0" cy="0" r="6" stroke="white" stroke-width="6" fill="black"/>
+        <path id="catEars" d="M0,0 L25,0 0,-50 -25,0 0,0"/>
+        <circle id="catHead" cx="0" cy="0" r="100"/>
+        <path id="line" d="M0,0 L100,0"/>
+        <path id="mouth" stroke="black" fill="none" stroke-width="5" d="M0,0 C100,0 100,100 0,100 L-40,100 M0,100 C100,100 100,200 0,200"/>
+        <path id="nose" stroke="none" fill="brown" stroke-width="5" d="M0,0 C0,0 40,-50 100,-75 100,-75 125,0 100,75 100,75 40,50 0,0"/>
+    </defs>
+
+    <g id="cat" transform="translate(880, 70) scale(0.65, 0.65)">
+        <use xlink:href="#catHead" transform="translate(1225,125)"/>
+        <use xlink:href="#catEars" transform="translate(1175,50) rotate(-30)"/>
+        <use xlink:href="#catEars" transform="translate(1275,50) rotate(30)"/>
+        <use xlink:href="#eye" transform="translate(1185,80)"/>
+        <use xlink:href="#eye" transform="translate(1260,80)"/>
+        <use xlink:href="#line" stroke="black" transform="translate(1260,130) rotate(-15)"/>
+        <use xlink:href="#line" stroke="black" transform="translate(1260,140)"/>
+        <use xlink:href="#line" stroke="black" transform="translate(1260,150) rotate(15)"/>
+        <use xlink:href="#line" stroke="black" transform="translate(1185,130) rotate(-165)"/>
+        <use xlink:href="#line" stroke="black" transform="translate(1185,140) rotate(180)"/>
+        <use xlink:href="#line" stroke="black" transform="translate(1185,150) rotate(-195)"/>
+        <use xlink:href="#mouth" transform="translate(1248,150) rotate(90) scale(0.25,0.25)"/>
+        <use xlink:href="#nose" transform="translate(1223,145) rotate(-90) scale(0.25,0.25)"/>
+    </g>
+</svg>

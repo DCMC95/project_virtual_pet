@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="795 220 1000 700" width="2000" height="650">
+    <defs>
+        <linearGradient id="greyLightDark">
+            <stop offset="5%" stop-color="lightgrey" />
+            <stop offset="95%" stop-color="dimgrey" />
+        </linearGradient>
+
+        <linearGradient id="greyDarkLight">
+            <stop offset="5%" stop-color="dimgrey" />
+            <stop offset="95%" stop-color="lightgrey" />
+        </linearGradient>
+
+        <path id="cube" d="M0,0 L50,0 50,50 0,50 0,0"/>
+        <path id="rectangle" d="M0,0 L50,0 50,250 0,250 0,0"/>
+        <path id="triangle" d="M0,0 L25,0 0,-50 -25,0 0,0"/>
+        <path id="semiCircle" d="M0,0 C0,100 100,100 100,0 L-1.5,0"/>
+        <path id="line" d="M0,0 L100,0"/>
+        <path id="foundation" d="M0,0 L502.6,0 527.6,130 -25,130 0,0"/>
+    </defs>
+    
+    <g transform="translate(375, 265)">
+        <use xlink:href="#cube" fill="url('#greyLightDark')" transform="translate(1381.25,320) scale(0.25,1)"/>
+        <use xlink:href="#cube" fill="url('#greyLightDark')" transform="translate(1453.25,320) scale(0.25,1)"/>
+        <use xlink:href="#cube" fill="url('#greyLightDark')" transform="translate(981.25,320) scale(0.25,1)"/>
+        <use xlink:href="#cube" fill="url('#greyLightDark')" transform="translate(1053.25,320) scale(0.25,1)"/>
+        <use xlink:href="#cube" fill="url('#greyLightDark')" transform="translate(1153.75,61) scale(0.4,2.5)"/>
+        <use xlink:href="#cube" fill="url('#greyLightDark')" transform="translate(1275.75,61) scale(0.4,2.5)"/>
+        <use xlink:href="#rectangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="2.5" transform="translate(1000,390)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="3" transform="translate(980,360) scale(0.9,0.6)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1" transform="translate(1375,516.79) rotate(180) scale(3,2)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1" transform="translate(1336,516.79) rotate(180) scale(2.25,2)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1" transform="translate(1298.5,516.79) rotate(180) scale(1.5,2)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1" transform="translate(1261.5,516.79) rotate(180) scale(0.75,2)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1" transform="translate(1225,61.5) scale(3,1.5)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1" transform="translate(1225,61.5) scale(2.25,1.5)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1" transform="translate(1225,61.5) scale(1.5,1.5)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1" transform="translate(1225,61.5) scale(0.75,1.5)"/>
+        <use xlink:href="#cube" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1187,215) scale(1.5,3)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1025,321) scale(2,1)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1025,321) scale(1.5,1)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1025,321) scale(1,1)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1025,321) scale(0.5,1)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1425,321) scale(2,1)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1425,321) scale(1.5,1)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1425,321) scale(1,1)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1425,321) scale(0.5,1)"/>
+        
+        <use xlink:href="#foundation" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(974,517.5) scale(1,1)"/>
+        <use xlink:href="#foundation" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1024,517.5) scale(0.8,1)"/>
+        <use xlink:href="#foundation" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1074,517.5) scale(0.6,1)"/>
+        <use xlink:href="#foundation" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1124,517.5) scale(0.4,1)"/>
+        <use xlink:href="#foundation" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1174,517.5) scale(0.2,1)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1274,650.5) rotate(180) scale(1,1)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1269,650.5) rotate(180) scale(1,1)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1264,650.5) rotate(180) scale(1,1)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1259,650.5) rotate(180) scale(1,1)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1254,650.5) rotate(180) scale(1,1)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1249,650.5) rotate(180) scale(1,1)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1244,650.5) rotate(180) scale(1,1)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1239,650.5) rotate(180) scale(1,1)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1.5" transform="translate(1234,650.5) rotate(180) scale(1,1)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1220,650.5) rotate(180) scale(0.75,0.8)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="3" transform="translate(1380,360) scale(0.9,0.6)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="3" transform="translate(991,360) scale(0.675,0.6)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="3" transform="translate(1002,360) scale(0.45,0.6)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="3" transform="translate(1013,360) scale(0.225,0.6)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="3" transform="translate(1391,360) scale(0.675,0.6)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="3" transform="translate(1402,360) scale(0.45,0.6)"/>
+        <use xlink:href="#semiCircle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="3" transform="translate(1413,360) scale(0.225,0.6)"/>
+
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.2" transform="translate(1224,385) scale(3,1.5)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.2" transform="translate(1224,385) scale(2.25,1.5)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.2" transform="translate(1224,385) scale(1.5,1.5)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.2" transform="translate(1224,385) scale(0.75,1.5)"/>
+        <use xlink:href="#triangle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1" transform="translate(1225,185) rotate(180) scale(3,1.5)"/>
+        <use xlink:href="#triangle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1" transform="translate(1225,185) rotate(180) scale(2.25,1.5)"/>
+        <use xlink:href="#triangle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1" transform="translate(1225,185) rotate(180) scale(1.5,1.5)"/>
+        <use xlink:href="#triangle" fill="url('#greyDarkLight')" stroke="lightgrey" stroke-width="1" transform="translate(1225,185) rotate(180) scale(0.75,1.5)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1425,517) scale(2,1)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1425,517) scale(1.5,1)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1425,517) scale(1,1)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1425,517) scale(0.5,1)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1025,517) scale(2,1)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1025,517) scale(1.5,1)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1025,517) scale(1,1)"/>
+        <use xlink:href="#triangle" fill="url('#greyLightDark')" stroke="lightgrey" stroke-width="1.5" transform="translate(1025,517) scale(0.5,1)"/>
+        <use xlink:href="#rectangle" fill="url('#greyLightDark')" transform="translate(1400,397) scale(0.99,0.378)"/>
+        <use xlink:href="#rectangle" fill="url('#greyLightDark')" transform="translate(999.7,397) scale(0.99,0.378)"/>
+        <use xlink:href="#rectangle" fill="none" stroke="lightgrey" stroke-width="2.5" transform="translate(1400,397) scale(1,0.085)"/>
+        <use xlink:href="#rectangle" fill="none" stroke="lightgrey" stroke-width="2.5" transform="translate(1400,418) scale(1,0.085)"/>
+        <use xlink:href="#rectangle" fill="none" stroke="lightgrey" stroke-width="2.5" transform="translate(1400,439) scale(1,0.085)"/>
+        <use xlink:href="#rectangle" fill="none" stroke="lightgrey" stroke-width="2.5" transform="translate(1400,460) scale(1,0.085)"/>
+        <use xlink:href="#rectangle" fill="none" stroke="lightgrey" stroke-width="2.5" transform="translate(1400,470.5) scale(1,0.085)"/>
+        
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1400,397.2) scale(1,0.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1400,418.2) scale(1,0.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1400,439.2) scale(1,0.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1400,460.2) scale(1,0.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1400,481.2) scale(1,0.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1399,397.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1420,397.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1440,397.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1404.25,407.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1414.75,407.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1434.75,407.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1399,418.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1420,418.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1440,418.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1404.25,428.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1414.75,428.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1434.75,428.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1399,439.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1420,439.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1440,439.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1404.25,449.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1414.75,449.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1434.75,449.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1399,460.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1420,460.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1440,460.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1404.25,470.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1414.75,470.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1434.75,470.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1399,481.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1420,481.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1440,481.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,397.2) scale(1,0.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,407.7) scale(1,0.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,418.2) scale(1,0.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,428.7) scale(1,0.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,439.2) scale(1,0.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,449.7) scale(1,0.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,460.2) scale(1,0.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,470.7) scale(1,0.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1000,481.2) scale(1,0.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(999,397.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1020,397.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1040,397.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1004.25,407.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1014.75,407.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1034.75,407.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(999,418.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1020,418.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1040,418.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1004.25,428.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1014.75,428.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1034.75,428.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(999,439.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1020,439.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1040,439.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1004.25,449.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1014.75,449.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1034.75,449.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(999,460.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1020,460.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1040,460.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1004.25,470.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1014.75,470.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1034.75,470.7) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(999,481.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1020,481.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1040,481.2) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="url('#greyLightDark')" transform="translate(1188.5,221) scale(1.45,1.5)"/>
+        <use xlink:href="#cube" fill="url('#greyLightDark')" transform="translate(1188.5,272) scale(1.45,1.5)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1188.75,221.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1209.75,221.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1230.75,221.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1251.75,221.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1194,232) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1204.5,232) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1215,232) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1236,232) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1246.5,232) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1188.75,242.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1209.75,242.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1230.75,242.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1251.75,242.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1194,253) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1204.5,253) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1215,253) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1236,253) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1246.5,253) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1188.75,263.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1209.75,263.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1230.75,263.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1251.75,263.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1194,274) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1204.5,274) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1215,274) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1236,274) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1246.5,274) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1188.75,284.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1209.75,284.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1230.75,284.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1251.75,284.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1194,295) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1204.5,295) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1215,295) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1236,295) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1246.5,295) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1188.75,305.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1209.75,305.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1230.75,305.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1251.75,305.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1194,316) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1204.5,316) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1215,316) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1236,316) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1246.53,316) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1188.75,326.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1209.75,326.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1230.75,326.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1251.75,326.5) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1194,337) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1204.5,337) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1215,337) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1236,337) scale(0.21.21)"/>
+        <use xlink:href="#cube" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1246.53,337) scale(0.21.21)"/>
+
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1106,420) scale(2.38,1)"/>
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(1080,470) scale(2.9,1)"/>
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="2" transform="translate(963,575) scale(5.22,1)"/>
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,221.5) scale(0.75,1)"/>
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,232) scale(0.75,1)"/>
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,242.5) scale(0.75,1)"/>
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,253) scale(0.75,1)"/>
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,263.5) scale(0.75,1)"/>
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,274) scale(0.75,1)"/>
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,284.5) scale(0.75,1)"/>
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,295) scale(0.75,1)"/>
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,305.5) scale(0.75,1)"/>
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,316) scale(0.75,1)"/>
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,326.5) scale(0.75,1)"/>
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1188,337) scale(0.75,1)"/>
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="0.8" transform="translate(1188,347.5) scale(0.75,1)"/>
+        <use xlink:href="#line" fill="none" stroke="lightgrey" stroke-width="0.4" transform="translate(1261.95,347.5) scale(5.1,1.26) rotate(-90)"/>
+    </g>
+</svg>
