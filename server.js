@@ -1,7 +1,6 @@
 import express from 'express';
 import { create, update, load, remove } from './db_api/manager.js';
 
-
 const app = express();
 app.use(express.static('client'));
 app.use(express.json());
