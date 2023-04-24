@@ -146,7 +146,7 @@ During this assignment, I encountered many challenges, two of which are listed b
 
 _NOTE: You can not load the game during the game, only before_
 
-##CONCLUSION
+## CONCLUSION
 As someone who, barely knew how to code in JS, CSS, HTML, when I started this assignment, I would say that I have done a good job. But, looking back, I would also like to of made my code much more legible, as well as adding all of the 'FUTURE FEATURES'.
 
 ## REFERENCES
