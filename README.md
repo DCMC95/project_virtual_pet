@@ -87,7 +87,9 @@ During this assignment, I encountered many challenges, two of which are listed b
 
 * When an Enemy is exterminated, the Mood increases by 5%.
 
-* Pets exist on the server, and the app is only a means of interacting with them.
+* I created my own DBMS, in order to better understand how they work.
+
+* Pets exist on the server database, and the app is only a means of interacting with them.
 
 * Upon creation of the pet, the pet is added to a server database, and during the gameplay you can save your game, allowing you to reload your progress at any moment, even if you turn off your device or close your browser, you can load your progress, but when the pet dies, it is deleted from the server database.
 
@@ -151,3 +153,5 @@ As someone who, barely knew how to code in JS, CSS, HTML, when I started this as
 
 ## REFERENCES
 [MDN](https://developer.mozilla.org/en-US/)
+
+_NOTE: I learnt from the references, but did everything myself_
