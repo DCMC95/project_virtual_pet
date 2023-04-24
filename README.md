@@ -11,7 +11,8 @@
 9. [HOW TO PLAY](#HOW-TO-PLAY)
 10. [START INSTRUCTIONS](#START-INSTRUCTIONS)
 11. [LOAD INSTRUCTIONS](#LOAD-INSTRUCTIONS)
-12. [REFERENCES](#REFERENCES)
+12. [CONCLUSION](#CONCLUSION)
+13. [REFERENCES](#REFERENCES)
 
 ## ABOUT
 ### DESCRIPTION
@@ -144,6 +145,9 @@ During this assignment, I encountered many challenges, two of which are listed b
 5. Enjoy!
 
 _NOTE: You can not load the game during the game, only before_
+
+##CONCLUSION
+As someone who, barely knew how to code in JS, CSS, HTML, when I started this assignment, I would say that I have done a good job. But, looking back, I would also like to of made my code much more legible, as well as adding all of the 'FUTURE FEATURES'.
 
 ## REFERENCES
 [MDN](https://developer.mozilla.org/en-US/)
